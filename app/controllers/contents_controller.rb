@@ -3,8 +3,7 @@ class ContentsController < ApplicationController
 
   # GET /contents
   def index
-    @contents = Content.all
-
+    @contents = Content.where(state:true)
     render json: @contents
   end
 
