@@ -12,5 +12,5 @@
 # end
 #
 # Crono.perform(TestJob).every 2.days, at: '8:30'
-#
+# Exec: bundle exec crono RAILS_ENV=development
 Crono.perform(PublishJob).every 1.day, at: {hour: 8, min: 30}
