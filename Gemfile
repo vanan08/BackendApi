@@ -13,6 +13,7 @@ gem 'sqlite3'
 
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'crono'
+gem 'seed_dump'
   
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
