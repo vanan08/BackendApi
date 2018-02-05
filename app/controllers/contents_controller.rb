@@ -3,8 +3,8 @@ class ContentsController < ApplicationController
 
   # GET /api/contents
   def index
-    #@contents = Content.where(state:"published")
-	@contents = Content.formatted_date
+    @contents = Content.where(state:"published")
+	#@contents = Content.formatted_date
 	render json: @contents
   end
 
