@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_02_02_041038) do
     t.string "author"
     t.string "summary"
     t.text "content"
-    t.boolean "state"
+    t.string "state"
     t.datetime "published_date"
   end
 

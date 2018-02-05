@@ -1,18 +1,19 @@
 class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :update, :destroy]
 
-  # GET /contents
+  # GET /api/contents
   def index
-    @contents = Content.where(state:true)
-    render json: @contents
+    #@contents = Content.where(state:"published")
+	@contents = Content.formatted_date
+	render json: @contents
   end
 
-  # GET /contents/1
+  # GET /api/contents/1
   def show
     render json: @content
   end
 
-  # POST /contents
+  # POST /api/contents
   def create
     @content = Content.new(content_params)
 
@@ -23,7 +24,7 @@ class ContentsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /contents/1
+  # PATCH/PUT /api/contents/1
   def update
     if @content.update(content_params)
       render json: @content
@@ -32,7 +33,7 @@ class ContentsController < ApplicationController
     end
   end
 
-  # DELETE /contents/1
+  # DELETE /api/contents/1
   def destroy
     @content.destroy
   end
@@ -47,4 +48,5 @@ class ContentsController < ApplicationController
     def content_params
       params.require(:content).permit(:title, :author, :summary, :content)
     end
+	
 end

@@ -5,7 +5,7 @@ class CreateContents < ActiveRecord::Migration[5.2]
       t.string :author
       t.string :summary
       t.text :content
-      t.boolean :state
+      t.string :state
       t.datetime :published_date
     end
   end
